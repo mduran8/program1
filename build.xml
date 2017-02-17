@@ -1,15 +1,17 @@
-<project name="SimpleWebServer" default="Compile" basedir=".">
-	
-
-	<target name = "Compile">
-		<javac srcdir ="SimpleWebServer" destdir = "SimpleWebServer"/>
-	</target>
- 
+<project name="Program2" default="run" basedir=".">
 
 
+<target name = "run" depends = "compile">
+	<java classname = "WebServer">
+		<classpath path = "test"/> 
+	</java>
+</target>
 
 
 
+<target name = "compile">
+	<javac includeantruntime = "false" srcdir = "./" destdir = "test"/>
+</target>
 
 
 </project>
